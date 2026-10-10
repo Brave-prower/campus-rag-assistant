@@ -1,0 +1,106 @@
+C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\utils\_validators.py:206: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `snapshot_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+[00:17:15] Start downloading all-MiniLM-L6-v2 via hf-mirror...
+HF_ENDPOINT = https://hf-mirror.com
+Traceback (most recent call last):
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\_snapshot_download.py", line 277, in snapshot_download
+    repo_info = api.repo_info(repo_id=repo_id, repo_type=repo_type, revision=revision)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\utils\_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\hf_api.py", line 3643, in repo_info
+    return method(
+        repo_id,
+    ...<4 lines>...
+        files_metadata=files_metadata,
+    )
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\utils\_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\hf_api.py", line 3322, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\campus-rag-assistant\backend\download_model.py", line 10, in <module>
+    path = snapshot_download(
+        repo_id="sentence-transformers/all-MiniLM-L6-v2",
+        local_dir=os.path.expanduser("~/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2"),
+        local_dir_use_symlinks=False,
+    )
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\utils\_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\utils\_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+  File "C:\Users\谢宇豪\AppData\Local\Programs\Python\Python314\Lib\site-packages\huggingface_hub\_snapshot_download.py", line 381, in snapshot_download
+    raise LocalEntryNotFoundError(
+    ...<4 lines>...
+    ) from api_call_error
+huggingface_hub.errors.LocalEntryNotFoundError: Got: ConnectTimeout: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+An error happened while trying to locate the files on the Hub, and we cannot find the appropriate snapshot folder for the specified revision on the local disk. Please check your internet connection and try again.

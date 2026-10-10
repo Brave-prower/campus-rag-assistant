@@ -1,0 +1,20 @@
+# 敏感信息
+.env
+*.env
+backend/.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+.next/
+
+# 上传的文件和日志
+uploads/
+*.log
+
+# 测试文件
+test_*.txt
+*_out.txt

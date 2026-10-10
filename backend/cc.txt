@@ -1,0 +1,2 @@
+VERSION: 1.5.9
+METHODS: ['clear_system_cache', 'close', 'count_collections', 'create_collection', 'database', 'delete_collection', 'from_system', 'get_chroma_cloud_api_key_from_clients', 'get_collection', 'get_collection_by_id', 'get_max_batch_size', 'get_or_create_collection', 'get_settings', 'get_user_identity', 'get_version', 'heartbeat', 'list_collections', 'reset', 'set_database', 'set_tenant', 'tenant']
